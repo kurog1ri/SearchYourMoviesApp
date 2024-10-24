@@ -8,10 +8,14 @@
 import SwiftUI
 
 @main
-struct SearchYourMoviesApp: App {
+struct YourApp: App {
+    
+    @StateObject var favoriteManager = FavoriteManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+                .environmentObject(favoriteManager)
         }
     }
 }
